@@ -14,9 +14,7 @@ export function Hero() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <h1 className="text-5xl md:text-7xl font-bold portfolio-text-primary mb-6 leading-tight">Jibraan Craig</h1>
-          <p className="text-xl md:text-2xl portfolio-text-secondary mb-8 font-light leading-relaxed">
-            Senior Full Stack Developer & UI/UX Designer
-          </p>
+          <p className="text-xl md:text-2xl portfolio-text-secondary mb-8 font-light leading-relaxed">Aspiring Investment Banking Associate & Asset Manager</p>
           <p className="text-lg portfolio-text-secondary max-w-2xl mx-auto leading-relaxed">
             Crafting exceptional digital experiences through innovative design and robust development. 
             Passionate about creating solutions that make a meaningful impact.
