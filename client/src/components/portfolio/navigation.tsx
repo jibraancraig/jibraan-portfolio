@@ -36,9 +36,7 @@ export function Navigation() {
       <nav className="fixed top-0 left-0 right-0 z-50 nav-blur bg-portfolio-primary/80 border-b border-portfolio-subtle">
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-xl font-semibold portfolio-text-primary">
-              Portfolio
-            </div>
+            <div className="text-xl font-semibold portfolio-text-primary">Jibraan Craig</div>
             <div className="hidden md:flex space-x-8">
               {navItems.map((item) => (
                 <button
@@ -59,7 +57,6 @@ export function Navigation() {
           </div>
         </div>
       </nav>
-
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-40 md:hidden">
