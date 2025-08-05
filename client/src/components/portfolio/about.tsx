@@ -27,12 +27,7 @@ export function About() {
               />
             </div>
             <div className="space-y-6">
-              <p className="text-lg portfolio-text-secondary leading-relaxed">
-                With over 8 years of experience in software development, I specialize in creating 
-                seamless user experiences that bridge the gap between complex functionality and 
-                intuitive design. My approach combines technical expertise with creative problem-solving 
-                to deliver solutions that exceed expectations.
-              </p>
+              <p className="text-lg portfolio-text-secondary leading-relaxed">Motivated and analytical Year 11 student with a strong interest in investment banking, asset management, and accountancy, demonstrated through hands-on virtual finance programs with JPMorgan, BofA, and Standard Chartered.</p>
               <p className="text-lg portfolio-text-secondary leading-relaxed">
                 I believe in the power of clean code, thoughtful design, and collaborative teamwork. 
                 Whether working on enterprise applications or startup MVPs, I bring the same level 
