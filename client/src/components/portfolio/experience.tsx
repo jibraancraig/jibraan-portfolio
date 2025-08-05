@@ -10,18 +10,18 @@ const experiences = [
     technologies: ['SWOT Analysis', 'DCF Modelling', 'Sensitivity Analysis', 'Financial Valuation']
   },
   {
-    title: 'Marketing Assistant Work Experience',
-    company: 'Kwanda',
-    duration: '2024 - 2024',
-    description: 'Supported marketing campaigns through content creation, social media management, and market research. Assisted in developing brand messaging strategies, coordinated promotional events, and analysed campaign performance metrics.',
-    technologies: ['Social Media Marketing', 'Content Creation', 'Market Research', 'Campaign Analytics']
+    title: 'JPMorgan Chase Investment Banking on Forage',
+    company: 'JPMorgan Chase',
+    duration: 'March 2025',
+    description: 'Identified an ideal M&A target for a client based on an assessment of their strategic and financial criteria. Constructed a DCF model to calculate the valuation of the M&A target and adjusted the model to account for a competitor bid and supply chain interruption. Created a 2-pager for the client containing a company profile and summary of the auction process.',
+    technologies: ['Company Analysis', 'DCF', 'Strategic Rationale', 'M&A Screening']
   },
   {
-    title: 'Proofreader',
-    company: 'Skoolmaths',
-    duration: '2019 - 2022',
-    description: 'Proofread digital lessons and worksheets made by Skoolmaths, and produced constructive feedback; corrected typography, suggested colour schemes etc.',
-    technologies: ['Typography', 'Content Review', 'Quality Assurance']
+    title: 'Marketing Assistant Work Experience',
+    company: 'Kwanda',
+    duration: 'Feb 2024',
+    description: 'Supported marketing campaigns through content creation, social media management, and market research. Assisted in developing brand messaging strategies, coordinated promotional events, and analysed campaign performance metrics',
+    technologies: ['Social Media Marketing', 'Content Creation', 'Market Research', 'Campaign Analytics']
   }
 ];
 
