@@ -4,7 +4,7 @@ import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 const education = [
   {
     degree: 'GCSEs',
-    field: 'Computer Science',
+    field: 'Grades Yet to Come',
     school: 'Stanford University',
     year: '2015 - 2017',
     details: 'Specialized in Human-Computer Interaction and Software Engineering. Thesis focused on improving user experience in complex web applications.'
