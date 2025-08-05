@@ -34,7 +34,7 @@ export function About() {
                   onClick={() => scrollToSection('contact')}
                   className="inline-flex items-center portfolio-accent hover:text-blue-600 transition-colors duration-200"
                 >
-                  Let's work together <ArrowRight className="ml-2 w-4 h-4" />
+                  Contact me <ArrowRight className="ml-2 w-4 h-4" />
                 </button>
               </div>
             </div>
