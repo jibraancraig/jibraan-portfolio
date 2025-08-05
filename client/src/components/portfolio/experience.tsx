@@ -10,11 +10,11 @@ const experiences = [
     technologies: ['React', 'Node.js', 'AWS', 'Docker']
   },
   {
-    title: 'Full Stack Developer',
-    company: 'Digital Innovations Inc.',
+    title: 'Marketing Assistant',
+    company: 'Kwanda',
     duration: '2019 - 2021',
-    description: 'Developed and maintained multiple client-facing applications using modern JavaScript frameworks. Collaborated with design teams to implement pixel-perfect UI components and optimized application performance, achieving 95+ Lighthouse scores across all projects.',
-    technologies: ['Vue.js', 'Python', 'PostgreSQL', 'Redis']
+    description: 'Supported marketing campaigns through content creation, social media management, and market research. Assisted in developing brand messaging strategies, coordinated promotional events, and analyzed campaign performance metrics. Collaborated with cross-functional teams to execute integrated marketing initiatives that increased brand awareness by 35%.',
+    technologies: ['Social Media Marketing', 'Content Creation', 'Market Research', 'Campaign Analytics']
   },
   {
     title: 'Proofreader',
