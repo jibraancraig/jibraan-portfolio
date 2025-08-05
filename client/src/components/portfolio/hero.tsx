@@ -24,7 +24,7 @@ export function Hero() {
               onClick={() => scrollToSection('about')}
               className="inline-flex items-center px-8 py-4 bg-portfolio-accent text-white rounded-full hover:bg-blue-600 transition-all duration-200 shadow-lg hover:shadow-xl"
             >
-              Explore My Work
+              Explore My Page
               <ArrowDown className="ml-2 w-4 h-4" />
             </button>
           </div>
