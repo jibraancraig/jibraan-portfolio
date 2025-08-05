@@ -28,11 +28,7 @@ export function About() {
             </div>
             <div className="space-y-6">
               <p className="text-lg portfolio-text-secondary leading-relaxed">Motivated and analytical Year 11 student with a strong interest in investment banking, asset management, and accountancy, demonstrated through hands-on virtual finance programs with JPMorgan, BofA, and Standard Chartered.</p>
-              <p className="text-lg portfolio-text-secondary leading-relaxed">
-                I believe in the power of clean code, thoughtful design, and collaborative teamwork. 
-                Whether working on enterprise applications or startup MVPs, I bring the same level 
-                of dedication and attention to detail to every project.
-              </p>
+              <p className="text-lg portfolio-text-secondary leading-relaxed">Ranked top 5% in Maths, building strong foundations in valuation, financial modelling, and macroeconomics. Seeking opportunities to apply these skills in a real-world finance environment.</p>
               <div className="pt-4">
                 <button
                   onClick={() => scrollToSection('contact')}
