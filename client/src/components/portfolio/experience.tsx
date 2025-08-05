@@ -10,9 +10,9 @@ const experiences = [
     technologies: ['React', 'Node.js', 'AWS', 'Docker']
   },
   {
-    title: 'Marketing Assistant',
+    title: 'Marketing Assistant Work Experience',
     company: 'Kwanda',
-    duration: '2019 - 2021',
+    duration: '2024 - 2024',
     description: 'Supported marketing campaigns through content creation, social media management, and market research. Assisted in developing brand messaging strategies, coordinated promotional events, and analysed campaign performance metrics.',
     technologies: ['Social Media Marketing', 'Content Creation', 'Market Research', 'Campaign Analytics']
   },
