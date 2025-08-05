@@ -3,11 +3,11 @@ import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 
 const experiences = [
   {
-    title: 'Senior Full Stack Developer',
-    company: 'TechFlow Solutions',
-    duration: '2021 - Present',
-    description: 'Led development of enterprise-scale applications serving 100k+ users. Architected microservices infrastructure and implemented modern CI/CD pipelines, resulting in 40% improvement in deployment frequency and 60% reduction in bugs reaching production.',
-    technologies: ['React', 'Node.js', 'AWS', 'Docker']
+    title: 'Bank of America Investment Banking Virtual Experience Program on Forage',
+    company: 'Bank of America',
+    duration: 'April 2025',
+    description: 'Identified an ideal acquisition target for a client based on a SWOT analysis and assessment of their strategic criteria. Constructed a DCF model to calculate the implied equity and share value of the acquisition target. Completed a sensitivity analysis to illustrate how the target\'s valuation would change as variables change. Created a company profile summarizing all key information about the target.',
+    technologies: ['SWOT Analysis', 'DCF Modelling', 'Sensitivity Analysis', 'Financial Valuation']
   },
   {
     title: 'Marketing Assistant Work Experience',
