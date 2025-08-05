@@ -5,7 +5,7 @@ const education = [
   {
     degree: 'GCSEs',
     field: 'Grades Yet to Come',
-    school: 'Stanford University',
+    school: 'St Matthew Academy',
     year: '2015 - 2017',
     details: 'Specialized in Human-Computer Interaction and Software Engineering. Thesis focused on improving user experience in complex web applications.'
   },
