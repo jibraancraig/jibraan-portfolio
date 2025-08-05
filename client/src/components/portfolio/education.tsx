@@ -3,7 +3,7 @@ import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 
 const education = [
   {
-    degree: 'Master of Science',
+    degree: 'GCSEs',
     field: 'Computer Science',
     school: 'Stanford University',
     year: '2015 - 2017',
