@@ -13,9 +13,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <h1 className="text-5xl md:text-7xl font-bold portfolio-text-primary mb-6 leading-tight">
-            Alex Thompson
-          </h1>
+          <h1 className="text-5xl md:text-7xl font-bold portfolio-text-primary mb-6 leading-tight">Jibraan Craig</h1>
           <p className="text-xl md:text-2xl portfolio-text-secondary mb-8 font-light leading-relaxed">
             Senior Full Stack Developer & UI/UX Designer
           </p>
