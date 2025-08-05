@@ -3,11 +3,10 @@ import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 import { Users, Lightbulb, MessageCircle, Settings } from 'lucide-react';
 
 const technicalSkills = [
-  { name: 'JavaScript/TypeScript', percentage: 95 },
-  { name: 'React/Next.js', percentage: 90 },
-  { name: 'Node.js/Express', percentage: 88 },
-  { name: 'Python/Django', percentage: 85 },
-  { name: 'AWS/Cloud Services', percentage: 80 }
+  { name: 'Excel', percentage: 65 },
+  { name: 'Powerpoint', percentage: 90 },
+  { name: 'Figma', percentage: 40 },
+  { name: 'Canva', percentage: 80 }
 ];
 
 const professionalSkills = [
