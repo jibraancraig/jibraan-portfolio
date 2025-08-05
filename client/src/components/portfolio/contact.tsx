@@ -11,20 +11,20 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    value: 'alex@example.com',
-    href: 'mailto:alex@example.com'
+    value: 'jibraancraig@gmail.com',
+    href: 'mailto:jibraancraig@gmail.com'
   },
   {
     icon: Linkedin,
     title: 'LinkedIn',
-    value: '/in/alexthompson',
-    href: 'https://linkedin.com/in/alexthompson'
+    value: '/in/jibraancraig',
+    href: 'https://www.linkedin.com/in/jibraan-craig-451812303/'
   },
   {
     icon: Github,
-    title: 'GitHub',
-    value: '/alexthompson',
-    href: 'https://github.com/alexthompson'
+    title: 'TPT Store',
+    value: '/MSELAHUB',
+    href: 'https://www.teacherspayteachers.com/store/math-science-ela-hub'
   }
 ];
 
