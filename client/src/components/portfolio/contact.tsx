@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, Github } from 'lucide-react';
+import { Mail, Linkedin, Store } from 'lucide-react';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -21,7 +21,7 @@ const contactInfo = [
     href: 'https://www.linkedin.com/in/jibraan-craig-451812303/'
   },
   {
-    icon: Github,
+    icon: Store,
     title: 'TPT Store',
     value: '/MSELAHUB',
     href: 'https://www.teacherspayteachers.com/store/math-science-ela-hub'
