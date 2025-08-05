@@ -17,11 +17,11 @@ const experiences = [
     technologies: ['Vue.js', 'Python', 'PostgreSQL', 'Redis']
   },
   {
-    title: 'Frontend Developer',
-    company: 'StartupTech',
-    duration: '2017 - 2019',
-    description: 'Built responsive web applications from concept to deployment. Worked closely with UX designers to create intuitive user interfaces and implemented comprehensive testing strategies that reduced post-launch issues by 50%.',
-    technologies: ['JavaScript', 'SASS', 'Webpack', 'Jest']
+    title: 'Proofreader',
+    company: 'Skoolmaths',
+    duration: '2019 - 2022',
+    description: 'Proofread digital lessons and worksheets made by Skoolmaths, and produced constructive feedback; corrected typography, suggested colour schemes etc.',
+    technologies: ['Typography', 'Content Review', 'Quality Assurance']
   }
 ];
 
