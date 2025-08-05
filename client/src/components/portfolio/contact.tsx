@@ -80,10 +80,7 @@ export function Contact() {
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
           <h2 className="text-4xl md:text-5xl font-bold portfolio-text-primary mb-8">Let's Connect</h2>
-          <p className="text-xl portfolio-text-secondary mb-12 max-w-2xl mx-auto">
-            Ready to bring your ideas to life? I'm always open to discussing new opportunities 
-            and interesting projects.
-          </p>
+          
           
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {contactInfo.map((contact, index) => {
