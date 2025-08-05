@@ -17,7 +17,7 @@ const professionalSkills = [
   },
   {
     name: 'Problem Solving',
-    description: 'Creative Solutions',
+    description: 'SWOT Analysis',
     icon: Lightbulb
   },
   {
@@ -26,8 +26,8 @@ const professionalSkills = [
     icon: MessageCircle
   },
   {
-    name: 'Project Management',
-    description: 'Agile/Scrum',
+    name: 'Data Analysis',
+    description: 'DCF Models',
     icon: Settings
   }
 ];
