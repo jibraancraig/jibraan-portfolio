@@ -18,15 +18,6 @@ const education = [
   }
 ];
 
-const certifications = [
-  {
-    name: 'Example Certification',
-    year: '2024',
-    icon: '🏆'
-  }
-];
-
-
 export function Education() {
   const { ref, isIntersecting } = useIntersectionObserver();
 
@@ -60,27 +51,6 @@ export function Education() {
                 </p>
               </motion.div>
             ))}
-          </div>
-
-          <div className="mt-12">
-            <h3 className="text-2xl font-semibold portfolio-text-primary mb-8 text-center">Certifications</h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              {certifications.map((cert, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isIntersecting ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1, ease: 'easeOut' }}
-                  className="text-center"
-                >
-                  <div className="w-16 h-16 bg-portfolio-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white text-2xl">{cert.icon}</span>
-                  </div>
-                  <h4 className="font-semibold portfolio-text-primary">{cert.name}</h4>
-                  <p className="portfolio-text-secondary text-sm">{cert.year}</p>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </motion.div>
       </div>
