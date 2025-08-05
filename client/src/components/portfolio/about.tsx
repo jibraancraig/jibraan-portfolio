@@ -3,6 +3,8 @@ import { ArrowRight } from 'lucide-react';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 import { useSmoothScroll } from '@/hooks/use-smooth-scroll';
 
+import _68762aa9_4db8_4628_86c5_736311d65116 from "@assets/68762aa9-4db8-4628-86c5-736311d65116.jpg";
+
 export function About() {
   const { ref, isIntersecting } = useIntersectionObserver();
   const { scrollToSection } = useSmoothScroll();
@@ -19,7 +21,7 @@ export function About() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800" 
+                src={_68762aa9_4db8_4628_86c5_736311d65116} 
                 alt="Professional headshot" 
                 className="rounded-2xl shadow-xl w-full h-auto"
               />
