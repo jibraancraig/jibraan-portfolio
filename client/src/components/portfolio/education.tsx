@@ -6,35 +6,26 @@ const education = [
     degree: 'GCSEs',
     field: 'Grades Yet to Come',
     school: 'St Matthew Academy',
-    year: '2015 - 2017',
+    year: '2020 - 2025',
     details: 'Subjects: Mathematics, English Literature, English Language, Combined Science, Geography, Film Studies, Spanish'
   },
   {
-    degree: 'Bachelor of Science',
-    field: 'Software Engineering',
-    school: 'UC Berkeley',
-    year: '2011 - 2015',
-    details: 'Graduated Magna Cum Laude. Active in programming competitions and open-source contributions. President of the Computer Science Society.'
+    degree: 'A-levels',
+    field: 'Grades Yet to Come',
+    school: 'N/A',
+    year: '2025-2027',
+    details: 'Subjects: Mathematics, Economics, IT'
   }
 ];
 
 const certifications = [
   {
-    name: 'AWS Solutions Architect',
-    year: '2022',
-    icon: '☁️'
-  },
-  {
-    name: 'Google Cloud Professional',
-    year: '2021',
-    icon: '🌐'
-  },
-  {
-    name: 'Scrum Master',
-    year: '2020',
-    icon: '📋'
+    name: 'Example Certification',
+    year: '2024',
+    icon: '🏆'
   }
 ];
+
 
 export function Education() {
   const { ref, isIntersecting } = useIntersectionObserver();
