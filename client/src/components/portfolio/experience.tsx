@@ -13,7 +13,7 @@ const experiences = [
     title: 'Marketing Assistant',
     company: 'Kwanda',
     duration: '2019 - 2021',
-    description: 'Supported marketing campaigns through content creation, social media management, and market research. Assisted in developing brand messaging strategies, coordinated promotional events, and analyzed campaign performance metrics. Collaborated with cross-functional teams to execute integrated marketing initiatives that increased brand awareness by 35%.',
+    description: 'Supported marketing campaigns through content creation, social media management, and market research. Assisted in developing brand messaging strategies, coordinated promotional events, and analysed campaign performance metrics.',
     technologies: ['Social Media Marketing', 'Content Creation', 'Market Research', 'Campaign Analytics']
   },
   {
