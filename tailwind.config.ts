@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
 
 export default {
   darkMode: ["class"],
@@ -61,6 +61,14 @@ export default {
           border: "var(--sidebar-border)",
           ring: "var(--sidebar-ring)",
         },
+        portfolio: {
+          primary: "var(--portfolio-primary)",
+          secondary: "var(--portfolio-secondary)",
+          accent: "var(--portfolio-accent)",
+          "text-primary": "var(--portfolio-text-primary)",
+          "text-secondary": "var(--portfolio-text-secondary)",
+          "border-subtle": "var(--portfolio-border-subtle)",
+        },
       },
       keyframes: {
         "accordion-down": {
@@ -87,4 +95,4 @@ export default {
     },
   },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
-} satisfies Config;
+} satisfies Config

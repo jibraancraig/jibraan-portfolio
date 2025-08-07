@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jibraan Craig - Portfolio</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/framer-motion@11.13.1/dist/framer-motion.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+      :root {
+        --portfolio-primary: #ffffff;
+        --portfolio-secondary: #f8fafc;
+        --portfolio-accent: #3b82f6;
+        --portfolio-text-primary: #1c1c1c;
+        --portfolio-text-secondary: #6b7280;
+        --portfolio-border-subtle: #e5e7eb;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--portfolio-primary);
+        color: var(--portfolio-text-primary);
+        line-height: 1.6;
+      }
+
+      .nav-blur {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+
+      .card-hover {
+        transition: all 0.3s ease;
+      }
+
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .skill-bar {
+        background: linear-gradient(
+          90deg,
+          var(--portfolio-accent) 0%,
+          #2563eb 100%
+        );
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease-out;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .portfolio-primary {
+        color: var(--portfolio-primary);
+      }
+      .portfolio-secondary {
+        color: var(--portfolio-secondary);
+      }
+      .portfolio-accent {
+        color: var(--portfolio-accent);
+      }
+      .portfolio-text-primary {
+        color: var(--portfolio-text-primary);
+      }
+      .portfolio-text-secondary {
+        color: var(--portfolio-text-secondary);
+      }
+      .bg-portfolio-primary {
+        background-color: var(--portfolio-primary);
+      }
+      .bg-portfolio-secondary {
+        background-color: var(--portfolio-secondary);
+      }
+      .bg-portfolio-accent {
+        background-color: var(--portfolio-accent);
+      }
+      .border-portfolio-subtle {
+        border-color: var(--portfolio-border-subtle);
+      }
+
+      .progress-bar {
+        width: 0%;
+        transition: width 1s ease-in-out;
+      }
+
+      .progress-bar.animate {
+        width: var(--progress-width);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 nav-blur bg-portfolio-primary/80 border-b border-portfolio-subtle"
+    >
+      <div class="max-w-6xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="text-xl font-semibold portfolio-text-primary">
+            Jibraan Craig
+          </div>
+          <div class="hidden md:flex space-x-8">
+            <button
+              onclick="scrollToSection('about')"
+              class="portfolio-text-secondary hover:portfolio-accent transition-colors duration-200"
+            >
+              About
+            </button>
+            <button
+              onclick="scrollToSection('experience')"
+              class="portfolio-text-secondary hover:portfolio-accent transition-colors duration-200"
+            >
+              Experience
+            </button>
+            <button
+              onclick="scrollToSection('education')"
+              class="portfolio-text-secondary hover:portfolio-accent transition-colors duration-200"
+            >
+              Education
+            </button>
+            <button
+              onclick="scrollToSection('skills')"
+              class="portfolio-text-secondary hover:portfolio-accent transition-colors duration-200"
+            >
+              Skills
+            </button>
+            <button
+              onclick="scrollToSection('contact')"
+              class="portfolio-text-secondary hover:portfolio-accent transition-colors duration-200"
+            >
+              Contact
+            </button>
+          </div>
+          <button
+            class="md:hidden portfolio-text-primary"
+            onclick="toggleMobileMenu()"
+          >
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-0 z-40 md:hidden hidden">
+      <div class="fixed inset-0 bg-black/50" onclick="toggleMobileMenu()"></div>
+      <div
+        class="fixed top-0 right-0 h-full w-64 bg-portfolio-primary shadow-xl"
+      >
+        <div class="px-6 py-20">
+          <div class="space-y-6">
+            <button
+              onclick="scrollToSection('about'); toggleMobileMenu()"
+              class="block w-full text-left portfolio-text-primary hover:portfolio-accent transition-colors duration-200 text-lg"
+            >
+              About
+            </button>
+            <button
+              onclick="scrollToSection('experience'); toggleMobileMenu()"
+              class="block w-full text-left portfolio-text-primary hover:portfolio-accent transition-colors duration-200 text-lg"
+            >
+              Experience
+            </button>
+            <button
+              onclick="scrollToSection('education'); toggleMobileMenu()"
+              class="block w-full text-left portfolio-text-primary hover:portfolio-accent transition-colors duration-200 text-lg"
+            >
+              Education
+            </button>
+            <button
+              onclick="scrollToSection('skills'); toggleMobileMenu()"
+              class="block w-full text-left portfolio-text-primary hover:portfolio-accent transition-colors duration-200 text-lg"
+            >
+              Skills
+            </button>
+            <button
+              onclick="scrollToSection('contact'); toggleMobileMenu()"
+              class="block w-full text-left portfolio-text-primary hover:portfolio-accent transition-colors duration-200 text-lg"
+            >
+              Contact
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center px-6 pt-20">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="fade-in">
+          <h1
+            class="text-5xl md:text-7xl font-bold portfolio-text-primary mb-6 leading-tight"
+          >
+            Jibraan Craig
+          </h1>
+          <p
+            class="text-xl md:text-2xl portfolio-text-secondary mb-8 font-light leading-relaxed"
+          >
+            Aspiring Investment Banking Associate & Asset Manager
+          </p>
+          <p
+            class="text-lg portfolio-text-secondary max-w-2xl mx-auto leading-relaxed"
+          >
+            Motivated to make a difference in the world through investment
+            banking and asset management.
+          </p>
+          <div class="mt-12">
+            <button
+              onclick="scrollToSection('about')"
+              class="inline-flex items-center px-8 py-4 bg-portfolio-accent text-white rounded-full hover:bg-blue-600 transition-all duration-200 shadow-lg hover:shadow-xl"
+            >
+              Explore My Page
+              <i data-lucide="arrow-down" class="ml-2 w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-portfolio-secondary">
+      <div class="max-w-4xl mx-auto">
+        <div class="fade-in">
+          <h2
+            class="text-4xl md:text-5xl font-bold portfolio-text-primary mb-12 text-center"
+          >
+            About Me
+          </h2>
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <img
+                src="profile-photo.jpg"
+                alt="Professional headshot"
+                class="rounded-2xl shadow-xl w-full h-auto"
+                onerror="console.log('Image failed to load:', this.src)"
+              />
+            </div>
+            <div class="space-y-6">
+              <p class="text-lg portfolio-text-secondary leading-relaxed">
+                Motivated and analytical Year 11 student with a strong interest
+                in investment banking, asset management, and accountancy,
+                demonstrated through hands-on virtual finance programs with
+                JPMorgan, BofA, and Standard Chartered.
+              </p>
+              <p class="text-lg portfolio-text-secondary leading-relaxed">
+                Ranked top 5% in Maths, building strong foundations in
+                valuation, financial modelling, and macroeconomics. Seeking
+                opportunities to apply these skills in a real-world finance
+                environment.
+              </p>
+              <div class="pt-4">
+                <button
+                  onclick="scrollToSection('contact')"
+                  class="inline-flex items-center portfolio-accent hover:text-blue-600 transition-colors duration-200"
+                >
+                  Contact me
+                  <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-6">
+      <div class="max-w-4xl mx-auto">
+        <div class="fade-in">
+          <h2
+            class="text-4xl md:text-5xl font-bold portfolio-text-primary mb-16 text-center"
+          >
+            Experience
+          </h2>
+
+          <div class="space-y-12">
+            <!-- Bank of America -->
+            <div
+              class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-portfolio-subtle"
+            >
+              <div
+                class="flex flex-col md:flex-row md:items-center md:justify-between mb-4"
+              >
+                <div>
+                  <h3 class="text-2xl font-semibold portfolio-text-primary">
+                    Bank of America Investment Banking on Forage
+                  </h3>
+                  <p class="portfolio-accent font-medium">Bank of America</p>
+                </div>
+                <span class="portfolio-text-secondary font-medium mt-2 md:mt-0"
+                  >April 2025</span
+                >
+              </div>
+              <p class="portfolio-text-secondary leading-relaxed mb-4">
+                Identified an ideal acquisition target for a client based on a
+                SWOT analysis and assessment of their strategic criteria.
+                Constructed a DCF model to calculate the implied equity and
+                share value of the acquisition target. Completed a sensitivity
+                analysis to illustrate how the target's valuation would change
+                as variables change. Created a company profile summarizing all
+                key information about the target.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-portfolio-secondary portfolio-text-secondary rounded-full text-sm"
+                  >SWOT Analysis</span
+                >
+                <span
+                  class="px-3 py-1 bg-portfolio-secondary portfolio-text-secondary rounded-full text-sm"
+                  >DCF Modelling</span
+                >
+                <span
+                  class="px-3 py-1 bg-portfolio-secondary portfolio-text-secondary rounded-full text-sm"
+                  >Sensitivity Analysis</span
+                >
+                <span
+                  class="px-3 py-1 bg-portfolio-secondary portfolio-text-secondary rounded-full text-sm"
+                  >Financial Valuation</span
+                >
+              </div>
+            </div>
+
+            <!-- JPMorgan Chase -->
+            <div
+              class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-portfolio-subtle"
+            >
+              <div
+                class="flex flex-col md:flex-row md:items-center md:justify-between mb-4"
+              >
+                <div>
+                  <h3 class="text-2xl font-semibold portfolio-text-primary">
+                    JPMorgan Chase Investment Banking on Forage
+                  </h3>
+                  <p class="portfolio-accent font-medium">JPMorgan Chase</p>
+                </div>
+                <span class="portfolio-text-secondary font-medium mt-2 md:mt-0"
+                  >March 2025</span
+                >
+              </div>
+              <p class="portfolio-text-secondary leading-relaxed mb-4">
+                Identified an ideal M&A target for a client based on an
+                assessment of their strategic and financial criteria.
+                Constructed a DCF model to calculate the valuation of the M&A
+                target and adjusted the model to account for a competitor bid
+                and supply chain interruption. Created a 2-pager for the client
+                containing a company profile and summary of the auction process.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-portfolio-secondary portfolio-text-secondary rounded-full text-sm"
+                  >Company Analysis</span
+                >
+                <span
+                  class="px-3 py-1 bg-portfolio-secondary portfolio-text-secondary rounded-full text-sm"
+                  >DCF</span
+                >
+                <span
+                  class="px-3 py-1 bg-portfolio-secondary portfolio-text-secondary rounded-full text-sm"
+                  >Strategic Rationale</span
+                >
+                <span
+                  class="px-3 py-1 bg-portfolio-secondary portfolio-text-secondary rounded-full text-sm"
+                  >M&A Screening</span
+                >
+              </div>
+            </div>
+
+            <!-- Marketing Assistant -->
+            <div
+              class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-portfolio-subtle"
+            >
+              <div
+                class="flex flex-col md:flex-row md:items-center md:justify-between mb-4"
+              >
+                <div>
+                  <h3 class="text-2xl font-semibold portfolio-text-primary">
+                    Marketing Assistant Work Experience
+                  </h3>
+                  <p class="portfolio-accent font-medium">Kwanda</p>
+                </div>
+                <span class="portfolio-text-secondary font-medium mt-2 md:mt-0"
+                  >Feb 2024</span
+                >
+              </div>
+              <p class="portfolio-text-secondary leading-relaxed mb-4">
+                Supported marketing campaigns through content creation, social
+                media management, and market research. Assisted in developing
+                brand messaging strategies, coordinated promotional events, and
+                analysed campaign performance metrics.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-portfolio-secondary portfolio-text-secondary rounded-full text-sm"
+                  >Social Media Marketing</span
+                >
+                <span
+                  class="px-3 py-1 bg-portfolio-secondary portfolio-text-secondary rounded-full text-sm"
+                  >Content Creation</span
+                >
+                <span
+                  class="px-3 py-1 bg-portfolio-secondary portfolio-text-secondary rounded-full text-sm"
+                  >Market Research</span
+                >
+                <span
+                  class="px-3 py-1 bg-portfolio-secondary portfolio-text-secondary rounded-full text-sm"
+                  >Campaign Analytics</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 px-6 bg-portfolio-secondary">
+      <div class="max-w-4xl mx-auto">
+        <div class="fade-in">
+          <h2
+            class="text-4xl md:text-5xl font-bold portfolio-text-primary mb-16 text-center"
+          >
+            Education
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- GCSEs -->
+            <div
+              class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-portfolio-subtle"
+            >
+              <div class="mb-4">
+                <h3 class="text-2xl font-semibold portfolio-text-primary mb-2">
+                  GCSEs
+                </h3>
+                <p class="portfolio-accent font-medium mb-1">
+                  Grades Yet to Come
+                </p>
+                <p class="portfolio-text-secondary">St Matthew Academy</p>
+                <span class="portfolio-text-secondary text-sm"
+                  >2020 - 2025</span
+                >
+              </div>
+              <p class="portfolio-text-secondary leading-relaxed">
+                Subjects: Mathematics, English Literature, English Language,
+                Combined Science, Geography, Film Studies, Spanish
+              </p>
+            </div>
+
+            <!-- A-levels -->
+            <div
+              class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-portfolio-subtle"
+            >
+              <div class="mb-4">
+                <h3 class="text-2xl font-semibold portfolio-text-primary mb-2">
+                  A-levels
+                </h3>
+                <p class="portfolio-accent font-medium mb-1">
+                  Grades Yet to Come
+                </p>
+                <p class="portfolio-text-secondary">N/A</p>
+                <span class="portfolio-text-secondary text-sm">2025-2027</span>
+              </div>
+              <p class="portfolio-text-secondary leading-relaxed">
+                Subjects: Mathematics, Economics, IT
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-6">
+      <div class="max-w-4xl mx-auto">
+        <div class="fade-in">
+          <h2
+            class="text-4xl md:text-5xl font-bold portfolio-text-primary mb-16 text-center"
+          >
+            Skills & Expertise
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-12">
+            <!-- Technical Skills -->
+            <div>
+              <h3 class="text-2xl font-semibold portfolio-text-primary mb-8">
+                Technical Skills
+              </h3>
+              <div class="space-y-6">
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="font-medium portfolio-text-primary"
+                      >Excel</span
+                    >
+                    <span class="portfolio-text-secondary">65%</span>
+                  </div>
+                  <div class="w-full bg-portfolio-secondary rounded-full h-2">
+                    <div
+                      class="progress-bar skill-bar h-2 rounded-full"
+                      data-width="65%"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="font-medium portfolio-text-primary"
+                      >Powerpoint</span
+                    >
+                    <span class="portfolio-text-secondary">90%</span>
+                  </div>
+                  <div class="w-full bg-portfolio-secondary rounded-full h-2">
+                    <div
+                      class="progress-bar skill-bar h-2 rounded-full"
+                      data-width="90%"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="font-medium portfolio-text-primary"
+                      >Figma</span
+                    >
+                    <span class="portfolio-text-secondary">40%</span>
+                  </div>
+                  <div class="w-full bg-portfolio-secondary rounded-full h-2">
+                    <div
+                      class="progress-bar skill-bar h-2 rounded-full"
+                      data-width="40%"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="font-medium portfolio-text-primary"
+                      >Canva</span
+                    >
+                    <span class="portfolio-text-secondary">80%</span>
+                  </div>
+                  <div class="w-full bg-portfolio-secondary rounded-full h-2">
+                    <div
+                      class="progress-bar skill-bar h-2 rounded-full"
+                      data-width="80%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Professional Skills -->
+            <div>
+              <h3 class="text-2xl font-semibold portfolio-text-primary mb-8">
+                Professional Skills
+              </h3>
+              <div class="grid grid-cols-2 gap-4">
+                <div class="text-center p-6 bg-portfolio-secondary rounded-xl">
+                  <div
+                    class="w-12 h-12 bg-portfolio-accent rounded-full flex items-center justify-center mx-auto mb-3"
+                  >
+                    <i data-lucide="users" class="text-white w-6 h-6"></i>
+                  </div>
+                  <h4 class="font-semibold portfolio-text-primary mb-1">
+                    Leadership
+                  </h4>
+                  <p class="portfolio-text-secondary text-sm">
+                    Team Management
+                  </p>
+                </div>
+                <div class="text-center p-6 bg-portfolio-secondary rounded-xl">
+                  <div
+                    class="w-12 h-12 bg-portfolio-accent rounded-full flex items-center justify-center mx-auto mb-3"
+                  >
+                    <i data-lucide="lightbulb" class="text-white w-6 h-6"></i>
+                  </div>
+                  <h4 class="font-semibold portfolio-text-primary mb-1">
+                    Problem Solving
+                  </h4>
+                  <p class="portfolio-text-secondary text-sm">SWOT Analysis</p>
+                </div>
+                <div class="text-center p-6 bg-portfolio-secondary rounded-xl">
+                  <div
+                    class="w-12 h-12 bg-portfolio-accent rounded-full flex items-center justify-center mx-auto mb-3"
+                  >
+                    <i
+                      data-lucide="message-circle"
+                      class="text-white w-6 h-6"
+                    ></i>
+                  </div>
+                  <h4 class="font-semibold portfolio-text-primary mb-1">
+                    Communication
+                  </h4>
+                  <p class="portfolio-text-secondary text-sm">
+                    Client Relations
+                  </p>
+                </div>
+                <div class="text-center p-6 bg-portfolio-secondary rounded-xl">
+                  <div
+                    class="w-12 h-12 bg-portfolio-accent rounded-full flex items-center justify-center mx-auto mb-3"
+                  >
+                    <i data-lucide="settings" class="text-white w-6 h-6"></i>
+                  </div>
+                  <h4 class="font-semibold portfolio-text-primary mb-1">
+                    Data Analysis
+                  </h4>
+                  <p class="portfolio-text-secondary text-sm">DCF Models</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-portfolio-secondary">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="fade-in">
+          <h2
+            class="text-4xl md:text-5xl font-bold portfolio-text-primary mb-8"
+          >
+            Let's Connect
+          </h2>
+
+          <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <!-- Email -->
+            <div
+              class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-portfolio-subtle"
+            >
+              <div
+                class="w-16 h-16 bg-portfolio-accent rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i data-lucide="mail" class="text-white w-8 h-8"></i>
+              </div>
+              <h3 class="font-semibold portfolio-text-primary mb-2">Email</h3>
+              <a
+                href="mailto:jibraancraig@gmail.com"
+                class="portfolio-accent hover:text-blue-600 transition-colors duration-200"
+              >
+                jibraancraig@gmail.com
+              </a>
+            </div>
+
+            <!-- LinkedIn -->
+            <div
+              class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-portfolio-subtle"
+            >
+              <div
+                class="w-16 h-16 bg-portfolio-accent rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i data-lucide="linkedin" class="text-white w-8 h-8"></i>
+              </div>
+              <h3 class="font-semibold portfolio-text-primary mb-2">
+                LinkedIn
+              </h3>
+              <a
+                href="https://www.linkedin.com/in/jibraan-craig-451812303/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="portfolio-accent hover:text-blue-600 transition-colors duration-200"
+              >
+                /in/jibraancraig
+              </a>
+            </div>
+
+            <!-- TPT Store -->
+            <div
+              class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-portfolio-subtle"
+            >
+              <div
+                class="w-16 h-16 bg-portfolio-accent rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i data-lucide="store" class="text-white w-8 h-8"></i>
+              </div>
+              <h3 class="font-semibold portfolio-text-primary mb-2">
+                TPT Store
+              </h3>
+              <a
+                href="https://www.teacherspayteachers.com/store/math-science-ela-hub"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="portfolio-accent hover:text-blue-600 transition-colors duration-200"
+              >
+                /MSELAHUB
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-2xl p-8 shadow-lg border border-portfolio-subtle"
+          >
+            <h3 class="text-2xl font-semibold portfolio-text-primary mb-6">
+              Send a Message
+            </h3>
+            <form id="contactForm" class="space-y-6">
+              <div class="grid md:grid-cols-2 gap-6">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  required
+                  class="w-full px-4 py-3 border border-portfolio-subtle rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  required
+                  class="w-full px-4 py-3 border border-portfolio-subtle rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+              </div>
+              <input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                class="w-full px-4 py-3 border border-portfolio-subtle rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                rows="5"
+                required
+                class="w-full px-4 py-3 border border-portfolio-subtle rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+              ></textarea>
+              <button
+                type="submit"
+                class="w-full md:w-auto px-8 py-4 bg-portfolio-accent text-white rounded-xl hover:bg-blue-600 transition-all duration-200 shadow-lg hover:shadow-xl"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 border-t border-portfolio-subtle">
+      <div class="max-w-4xl mx-auto text-center">
+        <p class="portfolio-text-secondary">
+          © 2024 Jibraan Craig. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Initialize Lucide icons
+      lucide.createIcons()
+
+      // Smooth scrolling
+      function scrollToSection(sectionId) {
+        const element = document.getElementById(sectionId)
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          })
+        }
+      }
+
+      // Mobile menu toggle
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobileMenu")
+        menu.classList.toggle("hidden")
+      }
+
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible")
+
+            // Animate progress bars
+            const progressBars = entry.target.querySelectorAll(".progress-bar")
+            progressBars.forEach((bar) => {
+              const width = bar.getAttribute("data-width")
+              bar.style.width = width
+            })
+          }
+        })
+      }, observerOptions)
+
+      // Observe all fade-in elements
+      document.addEventListener("DOMContentLoaded", () => {
+        const fadeElements = document.querySelectorAll(".fade-in")
+        fadeElements.forEach((el) => observer.observe(el))
+      })
+
+      // Contact form handling
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault()
+
+          const formData = new FormData(this)
+          const name = formData.get("name")
+          const email = formData.get("email")
+          const subject = formData.get("subject")
+          const message = formData.get("message")
+
+          if (!name || !email || !message) {
+            alert("Please fill in all required fields.")
+            return
+          }
+
+          // Simulate form submission
+          alert("Thank you for your message! I'll get back to you soon.")
+
+          // Reset form
+          this.reset()
+        })
+
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", function (e) {
+        const mobileMenu = document.getElementById("mobileMenu")
+        const menuButton = document.querySelector(
+          '[onclick="toggleMobileMenu()"]'
+        )
+
+        if (!mobileMenu.contains(e.target) && !menuButton.contains(e.target)) {
+          mobileMenu.classList.add("hidden")
+        }
+      })
+    </script>
+  </body>
+</html>

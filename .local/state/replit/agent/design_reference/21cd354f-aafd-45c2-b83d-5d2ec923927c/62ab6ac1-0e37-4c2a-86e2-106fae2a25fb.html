@@ -1,0 +1,524 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    'inter': ['Inter', 'sans-serif'],
+                },
+                colors: {
+                    'primary': '#FFFFFF',
+                    'secondary': '#F8F9FA',
+                    'accent': '#007AFF',
+                    'text-primary': '#1D1D1F',
+                    'text-secondary': '#86868B',
+                    'border-subtle': '#E5E5E7',
+                }
+            }
+        }
+    };
+    </script>
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .nav-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        
+        .skill-bar {
+            background: linear-gradient(90deg, #007AFF 0%, #005FCC 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="font-inter bg-primary text-text-primary">
+
+    <!-- @COMPONENT: Navigation [Fixed navigation with smooth scroll links] -->
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-blur bg-primary/80 border-b border-border-subtle">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-xl font-semibold text-text-primary">
+                    Portfolio
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-text-secondary hover:text-accent transition-colors duration-200">About</a>
+                    <a href="#experience" class="text-text-secondary hover:text-accent transition-colors duration-200">Experience</a>
+                    <a href="#education" class="text-text-secondary hover:text-accent transition-colors duration-200">Education</a>
+                    <a href="#skills" class="text-text-secondary hover:text-accent transition-colors duration-200">Skills</a>
+                    <a href="#contact" class="text-text-secondary hover:text-accent transition-colors duration-200">Contact</a>
+                </div>
+                <button class="md:hidden text-text-primary" data-event="click:toggleMobileMenu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero [Large introductory section with name and tagline] -->
+    <section class="min-h-screen flex items-center justify-center px-6 pt-20">
+        <div class="max-w-4xl mx-auto text-center fade-in">
+            <h1 class="text-5xl md:text-7xl font-bold text-text-primary mb-6 leading-tight">
+                <span data-bind="user.firstName">Alex</span> <span data-bind="user.lastName">Thompson</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-text-secondary mb-8 font-light leading-relaxed" data-bind="user.tagline">
+                Senior Full Stack Developer & UI/UX Designer
+            </p>
+            <p class="text-lg text-text-secondary max-w-2xl mx-auto leading-relaxed" data-bind="user.shortBio">
+                Crafting exceptional digital experiences through innovative design and robust development. 
+                Passionate about creating solutions that make a meaningful impact.
+            </p>
+            <div class="mt-12">
+                <a href="#about" class="inline-flex items-center px-8 py-4 bg-accent text-white rounded-full hover:bg-blue-600 transition-all duration-200 shadow-lg hover:shadow-xl">
+                    Explore My Work
+                    <i class="fas fa-arrow-down ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero -->
+
+    <!-- @COMPONENT: About [Personal statement and professional summary] -->
+    <section id="about" class="py-20 px-6 bg-secondary">
+        <div class="max-w-4xl mx-auto">
+            <div class="fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-text-primary mb-12 text-center">About Me</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <!-- A professional headshot of a confident developer in a modern office setting -->
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800" 
+                             alt="Professional headshot" 
+                             class="rounded-2xl shadow-xl w-full h-auto" 
+                             data-mock-image="true" />
+                    </div>
+                    <div class="space-y-6">
+                        <p class="text-lg text-text-secondary leading-relaxed" data-bind="user.personalStatement">
+                            With over 8 years of experience in software development, I specialize in creating 
+                            seamless user experiences that bridge the gap between complex functionality and 
+                            intuitive design. My approach combines technical expertise with creative problem-solving 
+                            to deliver solutions that exceed expectations.
+                        </p>
+                        <p class="text-lg text-text-secondary leading-relaxed" data-bind="user.philosophy">
+                            I believe in the power of clean code, thoughtful design, and collaborative teamwork. 
+                            Whether working on enterprise applications or startup MVPs, I bring the same level 
+                            of dedication and attention to detail to every project.
+                        </p>
+                        <div class="pt-4">
+                            <a href="#contact" class="inline-flex items-center text-accent hover:text-blue-600 transition-colors duration-200">
+                                Let's work together <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: About -->
+
+    <!-- @COMPONENT: Experience [Detailed work history with timeline] -->
+    <section id="experience" class="py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-text-primary mb-16 text-center">Experience</h2>
+                
+                <!-- @MAP: experiences.map(experience => ( -->
+                <div class="space-y-12">
+                    <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-border-subtle">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <div>
+                                <h3 class="text-2xl font-semibold text-text-primary" data-bind="experience.title">Senior Full Stack Developer</h3>
+                                <p class="text-accent font-medium" data-bind="experience.company">TechFlow Solutions</p>
+                            </div>
+                            <span class="text-text-secondary font-medium mt-2 md:mt-0" data-bind="experience.duration">2021 - Present</span>
+                        </div>
+                        <p class="text-text-secondary leading-relaxed mb-4" data-bind="experience.description">
+                            Led development of enterprise-scale applications serving 100k+ users. Architected microservices 
+                            infrastructure and implemented modern CI/CD pipelines, resulting in 40% improvement in deployment 
+                            frequency and 60% reduction in bugs reaching production.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-secondary text-text-secondary rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-secondary text-text-secondary rounded-full text-sm">Node.js</span>
+                            <span class="px-3 py-1 bg-secondary text-text-secondary rounded-full text-sm">AWS</span>
+                            <span class="px-3 py-1 bg-secondary text-text-secondary rounded-full text-sm">Docker</span>
+                        </div>
+                    </div>
+
+                    <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-border-subtle">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <div>
+                                <h3 class="text-2xl font-semibold text-text-primary" data-bind="experience.title">Full Stack Developer</h3>
+                                <p class="text-accent font-medium" data-bind="experience.company">Digital Innovations Inc.</p>
+                            </div>
+                            <span class="text-text-secondary font-medium mt-2 md:mt-0" data-bind="experience.duration">2019 - 2021</span>
+                        </div>
+                        <p class="text-text-secondary leading-relaxed mb-4" data-bind="experience.description">
+                            Developed and maintained multiple client-facing applications using modern JavaScript frameworks. 
+                            Collaborated with design teams to implement pixel-perfect UI components and optimized application 
+                            performance, achieving 95+ Lighthouse scores across all projects.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-secondary text-text-secondary rounded-full text-sm">Vue.js</span>
+                            <span class="px-3 py-1 bg-secondary text-text-secondary rounded-full text-sm">Python</span>
+                            <span class="px-3 py-1 bg-secondary text-text-secondary rounded-full text-sm">PostgreSQL</span>
+                            <span class="px-3 py-1 bg-secondary text-text-secondary rounded-full text-sm">Redis</span>
+                        </div>
+                    </div>
+
+                    <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-border-subtle">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <div>
+                                <h3 class="text-2xl font-semibold text-text-primary" data-bind="experience.title">Frontend Developer</h3>
+                                <p class="text-accent font-medium" data-bind="experience.company">StartupTech</p>
+                            </div>
+                            <span class="text-text-secondary font-medium mt-2 md:mt-0" data-bind="experience.duration">2017 - 2019</span>
+                        </div>
+                        <p class="text-text-secondary leading-relaxed mb-4" data-bind="experience.description">
+                            Built responsive web applications from concept to deployment. Worked closely with UX designers 
+                            to create intuitive user interfaces and implemented comprehensive testing strategies that 
+                            reduced post-launch issues by 50%.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-secondary text-text-secondary rounded-full text-sm">JavaScript</span>
+                            <span class="px-3 py-1 bg-secondary text-text-secondary rounded-full text-sm">SASS</span>
+                            <span class="px-3 py-1 bg-secondary text-text-secondary rounded-full text-sm">Webpack</span>
+                            <span class="px-3 py-1 bg-secondary text-text-secondary rounded-full text-sm">Jest</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Experience -->
+
+    <!-- @COMPONENT: Education [Academic background and certifications] -->
+    <section id="education" class="py-20 px-6 bg-secondary">
+        <div class="max-w-4xl mx-auto">
+            <div class="fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-text-primary mb-16 text-center">Education</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-border-subtle">
+                        <div class="mb-4">
+                            <h3 class="text-2xl font-semibold text-text-primary mb-2" data-bind="education.degree">Master of Science</h3>
+                            <p class="text-accent font-medium mb-1" data-bind="education.field">Computer Science</p>
+                            <p class="text-text-secondary" data-bind="education.school">Stanford University</p>
+                            <span class="text-text-secondary text-sm" data-bind="education.year">2015 - 2017</span>
+                        </div>
+                        <p class="text-text-secondary leading-relaxed" data-bind="education.details">
+                            Specialized in Human-Computer Interaction and Software Engineering. 
+                            Thesis focused on improving user experience in complex web applications.
+                        </p>
+                    </div>
+
+                    <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-border-subtle">
+                        <div class="mb-4">
+                            <h3 class="text-2xl font-semibold text-text-primary mb-2" data-bind="education.degree">Bachelor of Science</h3>
+                            <p class="text-accent font-medium mb-1" data-bind="education.field">Software Engineering</p>
+                            <p class="text-text-secondary" data-bind="education.school">UC Berkeley</p>
+                            <span class="text-text-secondary text-sm" data-bind="education.year">2011 - 2015</span>
+                        </div>
+                        <p class="text-text-secondary leading-relaxed" data-bind="education.details">
+                            Graduated Magna Cum Laude. Active in programming competitions and 
+                            open-source contributions. President of the Computer Science Society.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-12">
+                    <h3 class="text-2xl font-semibold text-text-primary mb-8 text-center">Certifications</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fab fa-aws text-white text-2xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-text-primary" data-bind="certification.name">AWS Solutions Architect</h4>
+                            <p class="text-text-secondary text-sm" data-bind="certification.year">2022</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fab fa-google text-white text-2xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-text-primary" data-bind="certification.name">Google Cloud Professional</h4>
+                            <p class="text-text-secondary text-sm" data-bind="certification.year">2021</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-certificate text-white text-2xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-text-primary" data-bind="certification.name">Scrum Master</h4>
+                            <p class="text-text-secondary text-sm" data-bind="certification.year">2020</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Education -->
+
+    <!-- @COMPONENT: Skills [Visual presentation of technical abilities] -->
+    <section id="skills" class="py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-text-primary mb-16 text-center">Skills & Expertise</h2>
+                
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-text-primary mb-8">Technical Skills</h3>
+                        <div class="space-y-6">
+                            <!-- @MAP: technicalSkills.map(skill => ( -->
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-text-primary" data-bind="skill.name">JavaScript/TypeScript</span>
+                                    <span class="text-text-secondary" data-bind="skill.percentage">95%</span>
+                                </div>
+                                <div class="w-full bg-border-subtle rounded-full h-2">
+                                    <div class="skill-bar h-2 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-text-primary" data-bind="skill.name">React/Next.js</span>
+                                    <span class="text-text-secondary" data-bind="skill.percentage">90%</span>
+                                </div>
+                                <div class="w-full bg-border-subtle rounded-full h-2">
+                                    <div class="skill-bar h-2 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-text-primary" data-bind="skill.name">Node.js/Express</span>
+                                    <span class="text-text-secondary" data-bind="skill.percentage">88%</span>
+                                </div>
+                                <div class="w-full bg-border-subtle rounded-full h-2">
+                                    <div class="skill-bar h-2 rounded-full" style="width: 88%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-text-primary" data-bind="skill.name">Python/Django</span>
+                                    <span class="text-text-secondary" data-bind="skill.percentage">85%</span>
+                                </div>
+                                <div class="w-full bg-border-subtle rounded-full h-2">
+                                    <div class="skill-bar h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-text-primary" data-bind="skill.name">AWS/Cloud Services</span>
+                                    <span class="text-text-secondary" data-bind="skill.percentage">80%</span>
+                                </div>
+                                <div class="w-full bg-border-subtle rounded-full h-2">
+                                    <div class="skill-bar h-2 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <!-- @END_MAP )) -->
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-semibold text-text-primary mb-8">Professional Skills</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <!-- @MAP: professionalSkills.map(skill => ( -->
+                            <div class="text-center p-6 bg-secondary rounded-xl">
+                                <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-users text-white"></i>
+                                </div>
+                                <h4 class="font-semibold text-text-primary mb-1" data-bind="skill.name">Leadership</h4>
+                                <p class="text-text-secondary text-sm" data-bind="skill.description">Team Management</p>
+                            </div>
+
+                            <div class="text-center p-6 bg-secondary rounded-xl">
+                                <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-lightbulb text-white"></i>
+                                </div>
+                                <h4 class="font-semibold text-text-primary mb-1" data-bind="skill.name">Problem Solving</h4>
+                                <p class="text-text-secondary text-sm" data-bind="skill.description">Creative Solutions</p>
+                            </div>
+
+                            <div class="text-center p-6 bg-secondary rounded-xl">
+                                <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-comments text-white"></i>
+                                </div>
+                                <h4 class="font-semibold text-text-primary mb-1" data-bind="skill.name">Communication</h4>
+                                <p class="text-text-secondary text-sm" data-bind="skill.description">Client Relations</p>
+                            </div>
+
+                            <div class="text-center p-6 bg-secondary rounded-xl">
+                                <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-cogs text-white"></i>
+                                </div>
+                                <h4 class="font-semibold text-text-primary mb-1" data-bind="skill.name">Project Management</h4>
+                                <p class="text-text-secondary text-sm" data-bind="skill.description">Agile/Scrum</p>
+                            </div>
+                            <!-- @END_MAP )) -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Skills -->
+
+    <!-- @COMPONENT: Contact [Professional contact information and links] -->
+    <section id="contact" class="py-20 px-6 bg-secondary">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-text-primary mb-8">Let's Connect</h2>
+                <p class="text-xl text-text-secondary mb-12 max-w-2xl mx-auto">
+                    Ready to bring your ideas to life? I'm always open to discussing new opportunities 
+                    and interesting projects.
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-border-subtle">
+                        <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-envelope text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-text-primary mb-2">Email</h3>
+                        <a href="mailto:alex@example.com" class="text-accent hover:text-blue-600 transition-colors duration-200" data-bind="contact.email">
+                            alex@example.com
+                        </a>
+                    </div>
+
+                    <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-border-subtle">
+                        <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fab fa-linkedin text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-text-primary mb-2">LinkedIn</h3>
+                        <a href="https://linkedin.com/in/alexthompson" class="text-accent hover:text-blue-600 transition-colors duration-200" data-bind="contact.linkedin">
+                            /in/alexthompson
+                        </a>
+                    </div>
+
+                    <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-border-subtle">
+                        <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fab fa-github text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-text-primary mb-2">GitHub</h3>
+                        <a href="https://github.com/alexthompson" class="text-accent hover:text-blue-600 transition-colors duration-200" data-bind="contact.github">
+                            /alexthompson
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-border-subtle">
+                    <h3 class="text-2xl font-semibold text-text-primary mb-6">Send a Message</h3>
+                    <form class="space-y-6" data-implementation="Should handle form submission and validation">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <input type="text" placeholder="Your Name" 
+                                   class="w-full px-4 py-3 border border-border-subtle rounded-xl focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent" 
+                                   data-mock="true" />
+                            <input type="email" placeholder="Your Email" 
+                                   class="w-full px-4 py-3 border border-border-subtle rounded-xl focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent" 
+                                   data-mock="true" />
+                        </div>
+                        <input type="text" placeholder="Subject" 
+                               class="w-full px-4 py-3 border border-border-subtle rounded-xl focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent" 
+                               data-mock="true" />
+                        <textarea placeholder="Your Message" rows="5" 
+                                  class="w-full px-4 py-3 border border-border-subtle rounded-xl focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent resize-none" 
+                                  data-mock="true"></textarea>
+                        <button type="submit" 
+                                class="w-full md:w-auto px-8 py-4 bg-accent text-white rounded-xl hover:bg-blue-600 transition-all duration-200 shadow-lg hover:shadow-xl"
+                                data-event="click:handleFormSubmit">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact -->
+
+    <!-- @COMPONENT: Footer [Simple footer with copyright] -->
+    <footer class="py-8 px-6 border-t border-border-subtle">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-text-secondary">© 2024 Alex Thompson. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // Smooth scroll animation and fade-in effects
+        (function() {
+            // Intersection Observer for fade-in animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all fade-in elements
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Mobile menu toggle functionality
+            // TODO: Implement mobile menu toggle functionality
+
+            // Form submission handling
+            // TODO: Implement form validation and submission logic
+
+            // Smooth scroll behavior for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
