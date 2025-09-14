@@ -12,6 +12,10 @@
       "dest": "/assets/$1"
     },
     {
+      "src": "/experience/?",
+      "dest": "/experience/index.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
