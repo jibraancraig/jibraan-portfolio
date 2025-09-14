@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Experience – Jibraan Craig</title>
+    <meta name="description" content="Detailed overview of Jibraan Craig's professional experience in investment banking, asset management, and marketing roles." />
+    <link rel="canonical" href="https://jibraancraig.com/experience/" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/framer-motion@11.13.1/dist/framer-motion.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+      :root {
+        --portfolio-primary: #ffffff;
+        --portfolio-secondary: rgb(225, 220, 212);
+        --portfolio-accent: rgb(117, 73, 49);
+        --portfolio-text-primary: #1c1c1c;
+        --portfolio-text-secondary: #6b7280;
+        --portfolio-border-subtle: #e5e7eb;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--portfolio-primary);
+        color: var(--portfolio-text-primary);
+        line-height: 1.6;
+      }
+
+      .nav-blur {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+
+      .card-hover {
+        transition: all 0.3s ease;
+      }
+
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .skill-bar {
+        background-color: var(--portfolio-accent);
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease-out;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .portfolio-primary {
+        color: var(--portfolio-primary);
+      }
+      .portfolio-secondary {
+        color: var(--portfolio-secondary);
+      }
+      .portfolio-accent {
+        color: var(--portfolio-accent);
+      }
+      .portfolio-text-primary {
+        color: var(--portfolio-text-primary);
+      }
+      .portfolio-text-secondary {
+        color: var(--portfolio-text-secondary);
+      }
+      .bg-portfolio-primary {
+        background-color: var(--portfolio-primary);
+      }
+      .bg-portfolio-secondary {
+        background-color: var(--portfolio-secondary);
+      }
+      .bg-portfolio-accent {
+        background-color: var(--portfolio-accent);
+      }
+      .border-portfolio-subtle {
+        border-color: var(--portfolio-border-subtle);
+      }
+
+      .progress-bar {
+        width: 0%;
+        transition: width 1s ease-in-out;
+      }
+
+      .progress-bar.animate {
+        width: var(--progress-width);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 nav-blur bg-portfolio-primary/80 border-b border-portfolio-subtle"
+    >
+      <div class="max-w-6xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="text-xl font-semibold portfolio-text-primary">
+            <a href="/" class="hover:portfolio-accent transition-colors duration-200">Jibraan Craig</a>
+          </div>
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="/#about"
+              class="portfolio-text-secondary hover:portfolio-accent transition-colors duration-200"
+            >
+              About
+            </a>
+            <a
+              href="/#experience"
+              class="portfolio-accent font-medium"
+            >
+              Experience
+            </a>
+            <a
+              href="/#education"
+              class="portfolio-text-secondary hover:portfolio-accent transition-colors duration-200"
+            >
+              Education
+            </a>
+            <a
+              href="/#skills"
+              class="portfolio-text-secondary hover:portfolio-accent transition-colors duration-200"
+            >
+              Skills
+            </a>
+            <a
+              href="/#contact"
+              class="portfolio-text-secondary hover:portfolio-accent transition-colors duration-200"
+            >
+              Contact
+            </a>
+          </div>
+          <button
+            class="md:hidden portfolio-text-primary"
+            onclick="toggleMobileMenu()"
+          >
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-0 z-40 md:hidden hidden">
+      <div class="fixed inset-0 bg-black/50" onclick="toggleMobileMenu()"></div>
+      <div
+        class="fixed top-0 right-0 h-full w-64 bg-portfolio-primary shadow-xl"
+      >
+        <div class="px-6 py-20">
+          <div class="space-y-6">
+            <a
+              href="/#about"
+              class="block w-full text-left portfolio-text-primary hover:portfolio-accent transition-colors duration-200 text-lg"
+            >
+              About
+            </a>
+            <a
+              href="/#experience"
+              class="block w-full text-left portfolio-accent font-medium text-lg"
+            >
+              Experience
+            </a>
+            <a
+              href="/#education"
+              class="block w-full text-left portfolio-text-primary hover:portfolio-accent transition-colors duration-200 text-lg"
+            >
+              Education
+            </a>
+            <a
+              href="/#skills"
+              class="block w-full text-left portfolio-text-primary hover:portfolio-accent transition-colors duration-200 text-lg"
+            >
+              Skills
+            </a>
+            <a
+              href="/#contact"
+              class="block w-full text-left portfolio-text-primary hover:portfolio-accent transition-colors duration-200 text-lg"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-20 px-6 py-12">
+      <div class="max-w-4xl mx-auto">
+        <div class="fade-in">
+          <!-- Back Link -->
+          <div class="mb-8">
+            <a
+              href="/"
+              class="inline-flex items-center gap-2 portfolio-text-secondary hover:portfolio-accent transition-colors duration-200"
+            >
+              <i data-lucide="arrow-left" class="w-4 h-4"></i>
+              ← Back to Home
+            </a>
+          </div>
+
+          <!-- Page Header -->
+          <h1 class="text-4xl md:text-5xl font-bold portfolio-text-primary mb-8">
+            All Experience
+          </h1>
+
+          <!-- Experience Entries -->
+          <div class="space-y-8">
+            <!-- Bank of America -->
+            <article class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-portfolio-subtle">
+              <header class="mb-6">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                  <div>
+                    <h2 class="text-2xl font-semibold portfolio-text-primary">
+                      Bank of America Investment Banking on Forage
+                    </h2>
+                    <p class="portfolio-accent font-medium text-lg">Bank of America</p>
+                  </div>
+                  <span class="portfolio-text-secondary font-medium mt-2 md:mt-0 text-lg">April 2025</span>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-portfolio-secondary portfolio-text-secondary rounded-full text-sm">SWOT Analysis</span>
+                  <span class="px-3 py-1 bg-portfolio-secondary portfolio-text-secondary rounded-full text-sm">DCF Modelling</span>
+                  <span class="px-3 py-1 bg-portfolio-secondary portfolio-text-secondary rounded-full text-sm">Sensitivity Analysis</span>
+                  <span class="px-3 py-1 bg-portfolio-secondary portfolio-text-secondary rounded-full text-sm">Financial Valuation</span>
+                  <span class="px-3 py-1 bg-portfolio-secondary portfolio-text-secondary rounded-full text-sm">M&A Strategy</span>
+                </div>
+              </header>
+
+              <div class="space-y-4">
+                <p class="portfolio-text-secondary leading-relaxed text-lg">
+                  Completed a comprehensive investment banking virtual experience program focused on M&A advisory and financial modeling. This intensive program provided hands-on experience with real-world investment banking methodologies and tools.
+                </p>
+
+                <h3 class="text-xl font-semibold portfolio-text-primary mb-3">Key Achievements:</h3>
+                <ul class="space-y-2 portfolio-text-secondary">
+                  <li class="flex items-start gap-3">
+                    <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
+                    <span>Identified an ideal acquisition target for a client based on comprehensive SWOT analysis and strategic criteria assessment</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
+                    <span>Constructed a detailed DCF model to calculate implied equity and share value of the acquisition target</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
+                    <span>Completed sensitivity analysis to illustrate how target valuation changes with variable adjustments</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
+                    <span>Created comprehensive company profile summarizing all key information about the target</span>
+                  </li>
+                </ul>
+
+                <details class="mt-6">
+                  <summary class="cursor-pointer font-medium portfolio-text-primary hover:portfolio-accent transition-colors duration-200">
+                    Additional Details & Methodology
+                  </summary>
+                  <div class="mt-4 p-4 bg-portfolio-secondary rounded-lg">
+                    <p class="portfolio-text-secondary mb-3">
+                      This program utilized industry-standard financial modeling techniques and provided exposure to:
+                    </p>
+                    <ul class="space-y-1 portfolio-text-secondary text-sm">
+                      <li>• Excel-based DCF modeling with proper terminal value calculations</li>
+                      <li>• Scenario analysis and sensitivity testing methodologies</li>
+                      <li>• Strategic rationale development for M&A transactions</li>
+                      <li>• Client presentation and communication skills</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </article>
+
+            <!-- JPMorgan Chase -->
+            <article class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-portfolio-subtle">
+              <header class="mb-6">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                  <div>
+                    <h2 class="text-2xl font-semibold portfolio-text-primary">
+                      JPMorgan Chase Investment Banking on Forage
+                    </h2>
+                    <p class="portfolio-accent font-medium text-lg">JPMorgan Chase</p>
+                  </div>
+                  <span class="portfolio-text-secondary font-medium mt-2 md:mt-0 text-lg">March 2025</span>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-portfolio-secondary portfolio-text-secondary rounded-full text-sm">Company Analysis</span>
+                  <span class="px-3 py-1 bg-portfolio-secondary portfolio-text-secondary rounded-full text-sm">DCF</span>
+                  <span class="px-3 py-1 bg-portfolio-secondary portfolio-text-secondary rounded-full text-sm">Strategic Rationale</span>
+                  <span class="px-3 py-1 bg-portfolio-secondary portfolio-text-secondary rounded-full text-sm">M&A Screening</span>
+                  <span class="px-3 py-1 bg-portfolio-secondary portfolio-text-secondary rounded-full text-sm">Auction Process</span>
+                </div>
+              </header>
+
+              <div class="space-y-4">
+                <p class="portfolio-text-secondary leading-relaxed text-lg">
+                  Participated in an advanced investment banking virtual experience program focusing on M&A transactions and competitive dynamics. This program provided deep insights into the auction process and strategic deal-making.
+                </p>
+
+                <h3 class="text-xl font-semibold portfolio-text-primary mb-3">Key Achievements:</h3>
+                <ul class="space-y-2 portfolio-text-secondary">
+                  <li class="flex items-start gap-3">
+                    <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
+                    <span>Identified an ideal M&A target for a client based on strategic and financial criteria assessment</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
+                    <span>Constructed a sophisticated DCF model to calculate valuation of the M&A target</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
+                    <span>Adjusted the model to account for competitor bid scenarios and supply chain interruptions</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
+                    <span>Created a comprehensive 2-pager for the client containing company profile and auction process summary</span>
+                  </li>
+                </ul>
+
+                <details class="mt-6">
+                  <summary class="cursor-pointer font-medium portfolio-text-primary hover:portfolio-accent transition-colors duration-200">
+                    Additional Details & Methodology
+                  </summary>
+                  <div class="mt-4 p-4 bg-portfolio-secondary rounded-lg">
+                    <p class="portfolio-text-secondary mb-3">
+                      This program emphasized practical application of investment banking concepts including:
+                    </p>
+                    <ul class="space-y-1 portfolio-text-secondary text-sm">
+                      <li>• Advanced DCF modeling with multiple scenario analysis</li>
+                      <li>• Competitive bidding dynamics and auction strategy</li>
+                      <li>• Risk assessment and mitigation strategies</li>
+                      <li>• Professional client communication and presentation skills</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </article>
+
+            <!-- Marketing Assistant -->
+            <article class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-portfolio-subtle">
+              <header class="mb-6">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                  <div>
+                    <h2 class="text-2xl font-semibold portfolio-text-primary">
+                      Marketing Assistant Work Experience
+                    </h2>
+                    <p class="portfolio-accent font-medium text-lg">Kwanda</p>
+                  </div>
+                  <span class="portfolio-text-secondary font-medium mt-2 md:mt-0 text-lg">February 2024</span>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-portfolio-secondary portfolio-text-secondary rounded-full text-sm">Social Media Marketing</span>
+                  <span class="px-3 py-1 bg-portfolio-secondary portfolio-text-secondary rounded-full text-sm">Content Creation</span>
+                  <span class="px-3 py-1 bg-portfolio-secondary portfolio-text-secondary rounded-full text-sm">Market Research</span>
+                  <span class="px-3 py-1 bg-portfolio-secondary portfolio-text-secondary rounded-full text-sm">Campaign Analytics</span>
+                  <span class="px-3 py-1 bg-portfolio-secondary portfolio-text-secondary rounded-full text-sm">Brand Strategy</span>
+                </div>
+              </header>
+
+              <div class="space-y-4">
+                <p class="portfolio-text-secondary leading-relaxed text-lg">
+                  Gained hands-on experience in digital marketing and brand management through a comprehensive work experience program. This role provided valuable insights into modern marketing strategies and campaign execution.
+                </p>
+
+                <h3 class="text-xl font-semibold portfolio-text-primary mb-3">Key Achievements:</h3>
+                <ul class="space-y-2 portfolio-text-secondary">
+                  <li class="flex items-start gap-3">
+                    <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
+                    <span>Supported marketing campaigns through creative content creation and social media management</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
+                    <span>Assisted in developing comprehensive brand messaging strategies and positioning</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
+                    <span>Coordinated promotional events and managed stakeholder communications</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"></i>
+                    <span>Analyzed campaign performance metrics and provided actionable insights for optimization</span>
+                  </li>
+                </ul>
+
+                <details class="mt-6">
+                  <summary class="cursor-pointer font-medium portfolio-text-primary hover:portfolio-accent transition-colors duration-200">
+                    Additional Details & Skills Developed
+                  </summary>
+                  <div class="mt-4 p-4 bg-portfolio-secondary rounded-lg">
+                    <p class="portfolio-text-secondary mb-3">
+                      This experience provided exposure to various marketing disciplines:
+                    </p>
+                    <ul class="space-y-1 portfolio-text-secondary text-sm">
+                      <li>• Social media strategy and content calendar management</li>
+                      <li>• Market research methodologies and competitive analysis</li>
+                      <li>• Event planning and coordination</li>
+                      <li>• Data analysis and performance reporting</li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+            </article>
+          </div>
+
+          <!-- Download CV Section -->
+          <div class="mt-12 text-center">
+            <div class="bg-portfolio-secondary rounded-2xl p-8">
+              <h3 class="text-2xl font-semibold portfolio-text-primary mb-4">
+                Download Full CV
+              </h3>
+              <p class="portfolio-text-secondary mb-6">
+                Get a comprehensive overview of my experience, education, and skills in PDF format.
+              </p>
+              <a
+                href="/Jibraan-Craig-CV.pdf"
+                class="inline-flex items-center gap-2 px-8 py-4 bg-portfolio-accent text-white rounded-xl hover:bg-blue-600 transition-all duration-200 shadow-lg hover:shadow-xl"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i data-lucide="download" class="w-5 h-5"></i>
+                Download CV (PDF)
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 border-t border-portfolio-subtle mt-16">
+      <div class="max-w-4xl mx-auto text-center">
+        <p class="portfolio-text-secondary">
+          © <span id="currentYear">2024</span> Jibraan Craig. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Initialize Lucide icons
+      lucide.createIcons()
+
+      // Mobile menu toggle
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobileMenu")
+        menu.classList.toggle("hidden")
+      }
+
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible")
+          }
+        })
+      }, observerOptions)
+
+      // Observe all fade-in elements
+      document.addEventListener("DOMContentLoaded", () => {
+        const fadeElements = document.querySelectorAll(".fade-in")
+        fadeElements.forEach((el) => observer.observe(el))
+
+        // Set current year
+        document.getElementById("currentYear").textContent = new Date().getFullYear()
+      })
+
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", function (e) {
+        const mobileMenu = document.getElementById("mobileMenu")
+        const menuButton = document.querySelector(
+          '[onclick="toggleMobileMenu()"]'
+        )
+
+        if (!mobileMenu.contains(e.target) && !menuButton.contains(e.target)) {
+          mobileMenu.classList.add("hidden")
+        }
+      })
+    </script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jibraan Craig",
+      "jobTitle": "Aspiring Investment Banking Associate & Asset Manager",
+      "description": "Motivated Year 12 student with strong interest in investment banking, asset management, and accountancy, demonstrated through hands-on virtual finance programs.",
+      "url": "https://jibraancraig.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/jibraan-craig-451812303/",
+        "https://www.teacherspayteachers.com/store/math-science-ela-hub"
+      ],
+      "email": "jibraancraig@gmail.com",
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Investment Banking",
+        "description": "Virtual experience programs with JPMorgan, Bank of America, and Standard Chartered"
+      }
+    }
+    </script>
+  </body>
+</html>
