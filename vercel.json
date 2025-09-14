@@ -1,5 +1,7 @@
 {
   "version": 2,
+  "buildCommand": null,
+  "outputDirectory": ".",
   "routes": [
     {
       "src": "/assets/(.*)",
@@ -7,7 +9,11 @@
     },
     {
       "src": "/experience/?",
-      "dest": "/experience/index.html"
+      "dest": "/experience.html"
     }
   ]
 }
+
+
+
+
