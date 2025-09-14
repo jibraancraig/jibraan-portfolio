@@ -1,13 +1,7 @@
 {
   "version": 2,
   "routes": [
-    {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
-    },
-    {
-      "src": "/experience/?",
-      "dest": "/experience/index.html"
-    }
+    { "src": "/assets/(.*)", "dest": "/assets/$1" },
+    { "src": "/experience/?", "dest": "/experience/index.html" }
   ]
 }
